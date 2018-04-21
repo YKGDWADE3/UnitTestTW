@@ -47,4 +47,11 @@ public class AnswerTest {
         mAnswer.validate();
     }
 
+    @Test
+    public void validateShouldThrowsExceptionWithFormatWrong() throws OutOfRangeAnswerException {
+        mExpectedException.expect(NumberFormatException.class);
+        mAnswer.setNumList(Arrays.asList(new String[]{"1", "*7", "3", "5"}));
+        mAnswer.validate();
+    }
+
 }
