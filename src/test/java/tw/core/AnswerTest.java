@@ -38,4 +38,13 @@ public class AnswerTest {
         mAnswer.setNumList(Arrays.asList(new String[]{"1", "3", "3", "5"}));
         mAnswer.validate();
     }
+
+    @Test
+    public void validateShouldThrowsExceptionWithDigitBiggerThan9() throws OutOfRangeAnswerException {
+        mExpectedException.expect(OutOfRangeAnswerException.class);
+        mExpectedException.expectMessage("Answer format is incorrect");
+        mAnswer.setNumList(Arrays.asList(new String[]{"1", "10", "3", "5"}));
+        mAnswer.validate();
+    }
+
 }
