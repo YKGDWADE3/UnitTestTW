@@ -14,14 +14,18 @@ public class InputValidator {
         List<String> numList = numStrToList(numStr);
         int NumCount = 4;
         Boolean isValidate = validateDigitsCount(numList, NumCount);
-        return isValidate && validateSingleGigit(numList, NumCount);
+        return isValidate && validateSingleDigit(numList, NumCount);
     }
 
-    private boolean validateSingleGigit(List<String> numList, int numCount) {
-        return numList.stream()
-                .map(num -> parseInt(num))
-                .distinct()
-                .filter(num -> num < 10).count() == numCount;
+    private boolean validateSingleDigit(List<String> numList, int numCount) {
+        try {
+            return numList.stream()
+                    .map(num -> parseInt(num))
+                    .distinct()
+                    .filter(num -> num < 10).count() == numCount;
+        }catch (NumberFormatException exception){
+            return false;
+        }
     }
 
     private Boolean validateDigitsCount(List<String> numList, int numCount) {
