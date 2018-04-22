@@ -46,10 +46,10 @@ public class Game {
 
     public String checkStatus() {
         String status;
-        if (guessResults.size() > MAX_TIMES) {
-            status = FAIL;
-        } else if (checkCorrectGuessResult()) {
+        if (checkCorrectGuessResult()) {
             status = SUCCESS;
+        } else if (guessResults.size() >= MAX_TIMES) {
+            status = FAIL;
         } else {
             status = CONTINUE;
         }

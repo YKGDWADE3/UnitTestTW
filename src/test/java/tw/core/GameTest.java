@@ -36,7 +36,7 @@ public class GameTest {
     public void should_guess_result_be_0A0B_when_inputNumbers_all_wrong() {
         inputAnswer.setNumList(Arrays.asList("5","6","7","8"));
         GuessResult guessResult = game.guess(inputAnswer);
-        assertEquals("0", guessResult.getResult());
+        assertEquals("0A0B", guessResult.getResult());
         assertEquals(inputAnswer.toString(), guessResult.getInputAnswer().toString());
     }
 

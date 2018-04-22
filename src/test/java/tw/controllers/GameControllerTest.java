@@ -57,12 +57,12 @@ public class GameControllerTest {
         when(inputGuess.input()).thenReturn(answer);
         gameController.play(inputGuess);
         assertThat(systemOut().contains(
-                "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
                         "Game Status: fail")).isTrue();
         verify(inputGuess, times(6)).input();
     }
@@ -73,8 +73,8 @@ public class GameControllerTest {
         when(inputGuess.input()).thenReturn(answer).thenReturn(answer2);
         gameController.play(inputGuess);
         assertThat(systemOut().contains(
-                "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 1 2 3 4, Guess Result: 4A0B]\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 1 2 3 4, Guess Result: 4A0B]\r\n" +
                         "Game Status: success")).isTrue();
         verify(inputGuess, times(2)).input();
     }
@@ -86,12 +86,12 @@ public class GameControllerTest {
         when(inputGuess.input()).thenReturn(answer).thenReturn(answer).thenReturn(answer).thenReturn(answer).thenReturn(answer).thenReturn(answer2);
         gameController.play(inputGuess);
         assertThat(systemOut().contains(
-                "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\n" +
-                        "[Guess Numbers: 1 2 3 4, Guess Result: 4A0B]\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 5 6 7 8, Guess Result: 0A0B]\r\n" +
+                        "[Guess Numbers: 1 2 3 4, Guess Result: 4A0B]\r\n" +
                         "Game Status: success")).isTrue();
         verify(inputGuess, times(6)).input();
     }
@@ -102,12 +102,12 @@ public class GameControllerTest {
         when(inputGuess.input()).thenReturn(answer);
         gameController.play(inputGuess);
         assertThat(systemOut().contains(
-                "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\n" +
-                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\n" +
-                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\n" +
-                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\n" +
-                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\n" +
-                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\n" +
+                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\r\n" +
+                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\r\n" +
+                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\r\n" +
+                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\r\n" +
+                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\r\n" +
+                        "[Guess Numbers: 1 3 7 2, Guess Result: 1A2B]\r\n" +
                         "Game Status: fail")).isTrue();
         verify(inputGuess, times(6)).input();
     }
@@ -118,7 +118,7 @@ public class GameControllerTest {
         when(inputGuess.input()).thenReturn(answer);
         gameController.play(inputGuess);
         assertThat(systemOut().contains(
-                "[Guess Numbers: 1 2 3 4, Guess Result: 4A0B]\n" +
+                        "[Guess Numbers: 1 2 3 4, Guess Result: 4A0B]\r\n" +
                         "Game Status: success")).isTrue();
         verify(inputGuess, times(1)).input();
     }
