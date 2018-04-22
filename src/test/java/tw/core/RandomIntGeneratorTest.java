@@ -51,4 +51,10 @@ public class RandomIntGeneratorTest {
         mIntGenerator.generateNums(10, 11);
 
     }
+
+    @Test
+    public void shouldGenerateNumSizeEqualsNumbersOfNeed() {
+        int size = Arrays.stream(mIntGenerator.generateNums(10, 5).split(" ")).collect(Collectors.toList()).size();
+        Assert.assertEquals(5, size);
+    }
 }
