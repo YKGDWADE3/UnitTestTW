@@ -4,7 +4,6 @@
 tdd-java-base.*
 build
 out
-*.iml
 *.ipr
 *.iws
 .idea/
